@@ -1,4 +1,4 @@
-# -NAHynH028422ZNN9
+# Potential talents detector
 ## Background:
 As a talent sourcing and management company, we are interested in finding talented individuals for sourcing these candidates to technology companies. Finding talented candidates is not easy, for several reasons. The first reason is one needs to understand what the role is very well to fill in that spot, this requires understanding the client’s needs and what they are looking for in a potential candidate. The second reason is one needs to understand what makes a candidate shine for the role we are in search for. Third, where to find talented individuals is another challenge.
 
@@ -27,3 +27,9 @@ Keywords: “Aspiring human resources” or “seeking human resources”
 
 ## Goal:
 Predict how fit the candidate is based on their available information (variable fit)
+
+## Methodology
+The data were pre-processed with lemmatization then eliminating punctuations and capitalization. Two different models were tested for ranking potential candidates based on key words: Word2Vec and BERT transformer. BERT transformer outperformerd the Word2Vec model resulting in a more reliable method. I also fine-tuned BERT in a googleColab notebook in order to maximise its performance on short sequence. The algorithm also behaves consistently when a candidate is starred and automatic re-ranking is required. 
+
+## Conclusions
+The model selected achieves the goal of the project. Additionally looking at the scores we can say that candidates with scores<=0.30 are not suitable and should not be there. Entries with scores>=0.70 are good candidates and should be stored for fututure positions. In order to avoid manual re-ranking bias, it should be prohibited to rerank candidates with scores <= 0.50 because they are likely to be not good.
